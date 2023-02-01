@@ -1,0 +1,48 @@
+{% extends 'inherit.html' %}
+
+{% block title %}contact {% endblock title %}
+
+
+{% block body %}
+<div class="container my-4">
+    <img src="/media/media/call.jpg" class="d-block w-100" alt="...">
+</div>
+<h1 text-align="center"><center>contact us</center></h1>
+<div class="container my-3 py-4">
+    <form class="row g-3" method="Post" action="/contact">
+    {% csrf_token %}
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" name="email" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="inputName" required>
+        </div>  
+        <div class="col-md-6">
+          <label for="inputName" class="form-label">LastName</label>
+          <input type="text" class="form-control" id="inputLastName" required>
+        </div>  
+        
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" class="form-control" id="inputCity" required>
+        </div>
+        
+        
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+
+</div>   
+{% endblock body%}

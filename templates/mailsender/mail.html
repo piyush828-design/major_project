@@ -1,0 +1,42 @@
+{% extends 'inherit.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send mail</title>
+</head>
+<body>
+    {% block body %}
+    <div class="container my-4">
+        <img src="/media/media/mail.jpg" class="d-block w-80" alt="...">
+    </div>
+    <h1 text-align="center"><center>Get Mail</center></h1>
+    <div class='container my-3 py-4'>
+    <form method='post'>
+        {% csrf_token %}
+        <div class="col-md-6">
+            <label for="inputSubject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="inputSubject" name="subject" required>
+        </div>
+        <div class="col-md-6 my-4">
+    
+            <textarea name="textarea" rows="10" cols="50" minlength="5" maxlength="200">
+            Write something here…
+            </textarea>
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email" required>
+        </div>
+        <div class="col-12 my-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+</div>
+{% endblock %}
